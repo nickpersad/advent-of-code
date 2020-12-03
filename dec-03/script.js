@@ -18,8 +18,8 @@ const findTrees = (path, pairs) => {
       const arr = row.split("");
 
       space += pairs.right;
-      if (space >= 31) {
-        space = space - 31;
+      if (space >= arr.length) {
+        space = space - arr.length;
       }
       if (arr[space] === "#") {
         trees++;
@@ -41,9 +41,10 @@ const findTrees = (path, pairs) => {
       { right: 7, down: 1 },
       { right: 1, down: 2 },
     ];
+    const partOne = findTrees(arr, pairs[1]);
     const trees = pairs.map((pair) => findTrees(arr, pair));
     const reducer = (accumulator, currentValue) => accumulator * currentValue;
-    const total = trees.reduce(reducer);
-    console.log(total);
+    const partTwo = trees.reduce(reducer);
+    console.log({ partOne, partTwo });
   }
 })();
