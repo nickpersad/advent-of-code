@@ -43,8 +43,7 @@ const findTrees = (path, pairs) => {
     ];
     const partOne = findTrees(arr, pairs[1]);
     const trees = pairs.map((pair) => findTrees(arr, pair));
-    const reducer = (accumulator, currentValue) => accumulator * currentValue;
-    const partTwo = trees.reduce(reducer);
+    const partTwo = trees.reduce((accumulator, currentValue) => accumulator * currentValue);
     console.log({ partOne, partTwo });
   }
 })();
