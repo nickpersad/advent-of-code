@@ -69,7 +69,7 @@ const seating = (seatIds) => {
   for (let i = 1; i < seatIds.length - 1; i++) {
     let seatId = seatIds[i];
 
-    if (prev !== seatId -1) {
+    if (prev !== seatId - 1) {
       missingSeat = seatId - 1;
       break;
     }
@@ -85,7 +85,6 @@ const seating = (seatIds) => {
     const arr = file.data.split("\n");
     const partOne = boardingPasses(arr);
     const partTwo = seating(partOne.seatIds);
-    
 
     console.log({ partOne, partTwo });
   }
